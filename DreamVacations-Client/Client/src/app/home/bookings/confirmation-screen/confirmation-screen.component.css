@@ -1,0 +1,16 @@
+.special {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: xx-large;
+    color: blue;
+}
+
+.content {
+    padding-top: 100px;
+    align-self: center;
+    align-items: center;
+    width: 700px;
+    height: 900px;
+    color: whitesmoke;
+    font-family: monospace;
+    font-size: larger;
+}

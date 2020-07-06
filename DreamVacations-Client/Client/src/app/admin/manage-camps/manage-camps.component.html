@@ -1,0 +1,28 @@
+<div class="col-md-7" *ngIf="listOfCamps">
+    <!--Camps List-->
+    <h1 class="special">Camps available</h1>
+    <div *ngFor="let camp of listOfCamps | paginate: { itemsPerPage: 5, currentPage: p }; let i = index" class="row">
+        <div class="col s12 m7">
+            <div class="card">
+                <div class="card-image">
+                    <img [src]="imageTransform(camp.Image)" class="cardimage">
+                    <span class="card-title">{{camp.Title}}</span>
+                </div>
+                <div class="card-content">
+                    <p>{{camp.Description}}</p>
+                </div>
+                <div class="card-action">
+                    <a href="/bookingdetails">Charges:{{camp.Amount}}/Night</a>
+                    <a href="/bookingdetails">Max for: {{camp.Capacity}}</a>
+                    <button type="button" (click)="EditCamp(camp.Id)" class="btn-large  book">Edit </button>
+                    <button type="button" (click)="DeleteCamp(camp.Id)" class="btn-large  book">Delete </button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <a href="javascript:void(0)">
+        {{p}}
+      </a>
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+</div>

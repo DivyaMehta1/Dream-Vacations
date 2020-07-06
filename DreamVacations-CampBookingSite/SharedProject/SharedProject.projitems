@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>38a3200b-d786-4a03-936e-a5d95606d159</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>SharedProject</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Bookings.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Camps.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Class1.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Users.cs" />
+  </ItemGroup>
+</Project>

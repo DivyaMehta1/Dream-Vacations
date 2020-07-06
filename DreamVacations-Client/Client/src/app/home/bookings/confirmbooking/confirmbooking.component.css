@@ -1,0 +1,62 @@
+body {
+    background-color: palegoldenrod;
+}
+
+.container {
+    padding-left: 50px;
+    align-content: center;
+    align-self: center;
+    height: 400px;
+    width: 300px
+}
+
+.jumbotron {
+    padding: 20px;
+}
+
+body {
+    height: 500px;
+    width: 900px;
+    resize: both;
+}
+
+.disable {
+    color: #a19e9e;
+}
+
+.info {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: x-large;
+    color: blue;
+}
+
+.special {
+    color: red;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: x-large;
+}
+
+.card-main {
+    padding-top: 20px;
+    margin: auto;
+    height: 700px;
+    width: 900px;
+    resize: both;
+}
+
+.content {
+    border: 0px solid;
+    width: 500px;
+    resize: both;
+    overflow: auto;
+    height: 700px;
+}
+
+.input {
+    height: 1px;
+    resize: both;
+}
+
+.form-group {
+    padding: 4px;
+}

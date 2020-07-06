@@ -1,0 +1,75 @@
+<!--MainPage-->
+<div class="header">
+</div>
+<!--Container for Search Camps-->
+<div class="container">
+    <div class="row">
+        <!--Col for Search Camps-->
+        <div class="col-md-4 sm-4 search" id="wrapper-1">
+            <div class="col sm-12"></div>
+            <!--CompStart-->
+            <div class="class col sm-4">
+                <div class="card">
+                    <div class="maingradient">
+                        <h1 style="text-align: center; padding: 2mm;">Search Camps</h1>
+                    </div>
+                    <form #form=ngForm (submit)="onSubmit()" autocomplete="on" class="wrapper-1">
+                        <div class="form-group">
+                            <div *ngIf="invalidateDates(checkout,checkin)" class="red-text center error-message">
+                                <i class="material-icons">error</i> CheckOutDate cant be less than CheckInDate
+                            </div>
+                            <label for="checkinDate">CheckInDate</label>
+                            <!--CheckinDate DatePicker-->
+                            <input type="date" [(ngModel)]="checkin" name="checkin">
+                            <hr/>
+                            <label for="checkoutDate">CheckOutDate</label>
+                            <!--checkout DatePicker -->
+                            <input type="date" [(ngModel)]="checkout" name="checkout">
+
+                            <hr/>
+                            <div class="form-group-md-5" style="padding-bottom: 3ex;">
+                                <label for="Capacity">Capacity</label>
+                                <select name="capacity" [(ngModel)]="capacity" id="" aria-placeholder="capacity" class="form-control">
+                                    <option value="2">2</option>
+                                    <option value="4">4</option>
+                                    <option value="6">6</option>
+                                </select>
+                            </div>
+                            <button type="submit" [disabled]="form.invalid" class="btn-large btn-submit">Submit </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!--Col for Camps List-->
+        <div class="col-md-7" *ngIf="filteredCamps">
+            <!--Camps List-->
+            <h1 class="special">Camps available</h1>
+            <div *ngFor="let camp of filteredCamps | paginate: { itemsPerPage: 5, currentPage: p }; let i = index" class="row">
+                <div class="col s12 m7">
+                    <div class="card">
+                        <div class="card-image">
+                            <img [src]="imageTransform(camp.Image)" class="cardimage">
+                            <span class="card-title">{{camp.Title}}</span>
+                        </div>
+                        <div class="card-content">
+                            <p>{{camp.Description}}</p>
+                        </div>
+                        <div class="card-action">
+                            <a href="/bookingdetails">Charges:{{camp.Amount}}/Night</a>
+                            <a href="/bookingdetails">Max for: {{camp.Capacity}}</a>
+                            <button type="button" (click)="getBookingDetails(camp.Id)" class="btn-large  book">Book Now </button>
+                            <br>
+                            <ngb-rating [rate]="camp.Rating"></ngb-rating>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a href="javascript:void(0)">
+                {{p}}
+              </a>
+            <pagination-controls (pageChange)="p = $event"></pagination-controls>
+        </div>
+    </div>
+</div>

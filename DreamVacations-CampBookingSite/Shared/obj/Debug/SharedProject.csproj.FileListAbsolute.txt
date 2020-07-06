@@ -1,0 +1,12 @@
+C:\Users\divyamehta\source\repos\DreamVacations-CampBookingSite\Shared\bin\Debug\Shared.dll.config
+C:\Users\divyamehta\source\repos\DreamVacations-CampBookingSite\Shared\bin\Debug\Shared.dll
+C:\Users\divyamehta\source\repos\DreamVacations-CampBookingSite\Shared\bin\Debug\Shared.pdb
+C:\Users\divyamehta\source\repos\DreamVacations-CampBookingSite\Shared\bin\Debug\EntityFramework.dll
+C:\Users\divyamehta\source\repos\DreamVacations-CampBookingSite\Shared\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\divyamehta\source\repos\DreamVacations-CampBookingSite\Shared\bin\Debug\EntityFramework.xml
+C:\Users\divyamehta\source\repos\DreamVacations-CampBookingSite\Shared\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\divyamehta\source\repos\DreamVacations-CampBookingSite\Shared\obj\Debug\SharedProject.csprojAssemblyReference.cache
+C:\Users\divyamehta\source\repos\DreamVacations-CampBookingSite\Shared\obj\Debug\SharedProject.csproj.CoreCompileInputs.cache
+C:\Users\divyamehta\source\repos\DreamVacations-CampBookingSite\Shared\obj\Debug\SharedProject.csproj.CopyComplete
+C:\Users\divyamehta\source\repos\DreamVacations-CampBookingSite\Shared\obj\Debug\Shared.dll
+C:\Users\divyamehta\source\repos\DreamVacations-CampBookingSite\Shared\obj\Debug\Shared.pdb

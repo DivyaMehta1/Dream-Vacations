@@ -1,0 +1,18 @@
+*---src
+    *-------app
+        *----Home -- Navbar
+            *---Dashboard -->visible camps -List & search
+            *---Bookings-->ConfirmBooking/confirmationScreen/MAnageBooking/
+            *---Login
+        *--Admin --- Navbar
+            *--DashBoard
+            *--ManageExistingCamps
+                *--Edit Camp
+                *--deleteCamp
+            *--AddCamp
+        *----Shared
+        *--assets
+
+
+       
+        

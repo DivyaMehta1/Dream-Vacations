@@ -1,0 +1,66 @@
+<!--NavBar-->
+
+
+<div class="card-main">
+    <div class="sm-jumbotron center-align">
+        <h1>Book Camp</h1>
+    </div>
+    <div class="jumbotron">
+        <div class="row">
+
+            <div class="col-4">
+
+                <div class="card" *ngIf="selectedCamp">
+                    <div class="card-image">
+                        <img [src]="imageTransform(selectedCamp.Image)" class="cardimage">
+                        <span class="card-title">{{selectedCamp.Title}}</span>
+                    </div>
+                    <div class="card-content">
+                        <p>{{selectedCamp.Description}}</p>
+                    </div>
+                    <div class="card-action">
+                        <a href="/bookingdetails">Charges: INR:{{selectedCamp.Amount}}/Night</a>
+                        <br>
+                        <a href="/bookingdetails">Max for: {{selectedCamp.Capacity}}</a>
+                        <br>
+                        <a href="/confirmbooking" class="book"></a>
+
+                    </div>
+                </div>
+            </div>
+
+            <div *ngIf="formData" class="content">
+                <form #form=ngForm (submit)="onSubmit()" autocomplete="on" class="wrapper-1">
+                    <div class="form-group">
+                        <label for="nights">Nights : </label>
+                        <label for="nights">{{numberOfDays}} </label>
+                        <div class="special" *ngIf="isWeekend()">
+                            Congratulations! You Got a WeekendDiscount of 30%
+                            <br> BillingAmount {{numberOfDays}}*{{0.7*selectedCamp.Amount}}= INR : {{numberOfDays*.7*selectedCamp.Amount}}
+                        </div>
+
+                        <div *ngIf="isWeekend()===false" class="info">
+                            <br> Billing Amount {{numberOfDays}}* {{selectedCamp.Amount}}
+                            <br>INR: {{numberOfDays * selectedCamp.Amount}}
+
+                        </div>
+
+
+                        <label for="Contact">Contact :</label>
+                        <input id="Contact" name="contact" #Contact="ngModel" [(ngModel)]="formData.Contact" class="form-control" required>
+
+                        <label for="BillingAddress">BillingAddress :</label>
+                        <input id="BillingAddress" name="BillingAddress" #BillingAddress="ngModel" [(ngModel)]="formData.BillingAddress" class="form-control" required>
+                        <label for="ZipCode">ZipCode :</label>
+                        <input id="ZipCode" name="ZipCode" #Zipcode="ngModel" [(ngModel)]="formData.ZipCode" class="form-control" required>
+
+                        <label for="State">State :</label>
+                        <input id="State" name="State" #State="ngModel" [(ngModel)]="formData.State" class="form-control" required>
+                        <label for="country">country:</label>
+                        <input id="country" name="country" #Country="ngModel" [(ngModel)]="formData.Country" class="form-control" required>
+                        <button type="submit" [disabled]="form.invalid" class="btn-large btn-submit">Submit </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>

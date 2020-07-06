@@ -1,0 +1,50 @@
+<div class="col sm-1"></div>
+<div class="class colsm-4">
+    <div class="card">
+        <div class="sm-jumbotron center-align">
+            <h1>Add Camp</h1>
+        </div>
+
+        <form #form=ngForm (submit)="onSubmit()" autocomplete="off">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="CampTitle">Title</label>
+                        <input name="Title" #Title="ngModel" [(ngModel)]="formData.Title" class="form-control" required>
+                        <div class="validation-error" *ngIf="Title.invalid && Title.touched">This Field is Required</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="Description">Description</label>
+                        <input name="Description" #Description="ngModel" [(ngModel)]="formData.Description" class="form-control">
+                    </div>
+                    <div class="form-group-md-5">
+                        <label for="Capacity">Capacity</label>
+                        <input name="Capacity" #Capacity="ngModel" [(ngModel)]="formData.Capacity" class="form-control">
+                    </div>
+                    <div class="form-group-md-7">
+                        <label for="Amount">Amount</label>
+                        <input name="Amount" #Amount="ngModel" [(ngModel)]="formData.Amount" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" [disabled]="form.invalid" class="btn-large btn-submit">Submit </button>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="col-sm-5">
+                        <div class="custom-file">
+                            <input type="file" class="custom-file-input" id="customFile" accept="image/*" name="file" required #fileInput (change)="onFileChange(fileInput.files[0])" />
+                            <label class="custom-file-label" for="customFile">{{fileName}}</label>
+                        </div>
+                    </div>
+                    <div>
+                        <img height="300px" width="300px" class="border border-secondary rounded img" [src]="imageUrl" />
+                        <p class="enterImage" *ngIf='enterImage'>Image will be displayed Here</p>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+
+    </div>
+
+</div>

@@ -1,0 +1,50 @@
+<div class="col-8 search" id="wrapper-1">
+    <br>
+    <br>
+    <div class="col md-4 sm-12 "></div>
+    <!--CompStart-->
+    <div class="class col sm-4" style="align-self: center;">
+        <div class="card">
+            <div class="maingradient">
+                <h1 style="text-align: center; padding: 2mm;">Enter Reference Number:</h1>
+            </div>
+            <form #form=ngForm (submit)="onSubmit()" autocomplete="on" class="wrapper-1">
+                <div class="form-group">
+                    <label for="refNumber">Reference Number</label>
+                    <input id="ReferenceNumber" [value]="" name="ReferenceNumber" #ReferenceNumber="ngModel" [(ngModel)]="referenceNumber" class="form-control" required>
+                    <button type="submit" [disabled]="form.invalid" class="btn-large btn-submit">Submit </button>
+                </div>
+            </form>
+            <div style="color:red;" id="error"></div>
+        </div>
+
+    </div>
+
+    <!--Display Details-->
+    <div class="col-md-7">
+        <div class="row">
+            <div class="col s12 m7">
+                <div *ngIf="bookingDetails" class="card blue-grey darken-1">
+                    <div class="card-content white-text">
+                        <div class="title">YOur Billing Details</div>
+                        <p>CheckinDate : {{bookingDetails.CheckInDate}} </p>
+                        <p>CheckoutDate :{{bookingDetails.CheckOutDate}} </p>
+                        <p>NoOfPeople : {{bookingDetails.NoOfPeople}} </p>
+                        <p>BillingAmount : {{bookingDetails.BillingAmount}} </p>
+                        <p>BillingAddress : {{bookingDetails.BillingAddress}} </p>
+                        <div *ngIf="isPast()">
+
+                            <p>
+                                <ngb-rating [(rate)]="rating"></ngb-rating>
+                                <button (click)="rateCamp(rating)">Rate Now</button>
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+                <button (click)="cancelBooking()">Cancel Booking</button>
+            </div>
+        </div>
+    </div>
+
+</div>
